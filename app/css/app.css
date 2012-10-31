@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#header {
+  height: 50px;
+}
+
+#footer {
+  text-align: center;
+  font-size: 10pt;
+  border-top: 1px solid black;
+  margin-top: 10px;
+  padding-top: 10px;
+  clear: both;
+}
+
+#filter {
+  float: left;
+  width: 275px;
+}
+
+#main {
+  margin-left: 280px;
+}
+
+#main.loading {
+  text-align: center;
+}
+
+label[disabled] {
+  color: gray;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table td, table th {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+th { text-align: left; }
+.col-name { width: 200px; }
+.col-type { width: 115px; }
+.col-quality { width: 130px; }
+
+.cell-type.red { color: red; }
+.cell-type.blue { color: blue; }
+.cell-type.yellow { color: yellow; }
+.cell-type.meta { color: gray; }
+.cell-type.sha-touched { color: orange; }
+
+.cell-quality.common { color: black; }
+.cell-quality.uncommon { color: green; }
+.cell-quality.rare { color: blue; }
+.cell-quality.epic { color: purple; }
+.cell-quality.legendary { color: orange; }

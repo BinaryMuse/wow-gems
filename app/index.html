@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="gem-finder">
+<head>
+  <meta charset="utf-8">
+  <title>WoW Gem Finder</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+
+  <div id="header">
+    <h1>WoW Gem Finder</h1>
+  </div>
+
+  <div id="content">
+    <div ng-view></div>
+  </div>
+
+  <div id="footer">&copy; 2012 Brandon Tilley</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<div ng-controller="IndexController">
+
+  <div id="filter">
+    <div class='filter-section' ng-repeat="filterType in filterCategories">
+      <p><strong>{{filterType}}</strong></p>
+      <div class="checkbox-container" ng-repeat="type in filterValues[filterType.toLowerCase()]">
+        <input id="check-type-{{type.value}}"
+               type="checkbox"
+               ng-model="filter[filterType.toLowerCase()][type.name]"
+               ng-change="refilter()"
+               ng-disabled="!canFilter(filterType.toLowerCase(), type.name)">
+        <label for="check-type-{{type.value}}" ng-disabled="!canFilter(filterType.toLowerCase(), type.name)">{{type.name}}</label>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="loading" ng-show="!loaded">
+      Loading...
+    </div>
+
+    <div class="loaded" ng-show="loaded">
+      <div>Showing {{filteredGems.length}} of
+        <ng-pluralize count="allGems.length"
+                      when="{'1': '1 gem', 'other': '{} gems'}"></ng-pluralize>.
+      </div>
+      <table>
+        <tr>
+          <th class="col-name">Name</th>
+          <th class="col-type">Type</th>
+          <th class="col-quality">Quality</th>
+          <th>Stats</td>
+        </tr>
+        <tr ng-repeat="gem in filteredGems">
+          <td class="cell-name">{{gem.name}}</td>
+          <td class="cell-type {{gem.type | lowercase}}">{{gem.type}}</td>
+          <td class="cell-quality {{gem.quality | lowercase}}">{{gem.quality}}</td>
+          <td class="cell-stats">
+            <div ng-repeat="stat in gem.stats">{{stat.amount}} {{stat.stat}}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

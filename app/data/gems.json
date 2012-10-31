@@ -1,0 +1,58 @@
+{
+  "gems": [
+    {
+      "id": 1,
+      "name": "The Red Gem",
+      "type": "Red",
+      "jcOnly": false,
+      "quality": "Epic",
+      "stats": [
+        { "stat": "Agility", "amount": "+120" },
+        { "stat": "Stamina", "amount": "+120" }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "The Blue Gem",
+      "type": "Blue",
+      "jcOnly": false,
+      "quality": "Rare",
+      "stats": [
+        { "stat": "Strength", "amount": "+120" },
+        { "stat": "PvP Resilience", "amount": "+340" }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "The Other Red Gem",
+      "type": "Red",
+      "jcOnly": true,
+      "quality": "Uncommon",
+      "stats": [
+        { "stat": "Agility", "amount": "+120" }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "A Meta Gem",
+      "type": "Meta",
+      "jcOnly": false,
+      "quality": "Epic",
+      "stats": [
+        { "stat": "Stamina", "amount": "+120" },
+        { "stat": "Increased Armor Value from Items", "amount": "2%" }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Crystallized Dread",
+      "type": "Sha-Touched",
+      "jcOnly": false,
+      "quality": "Legendary",
+      "stats": [
+        { "stat": "Stamina", "amount": "+320" },
+        { "stat": "Critical Strike Rating", "amount": "+320" }
+      ]
+    }
+  ]
+}
