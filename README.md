@@ -5,7 +5,7 @@ Running
 -------
 
   1. Ensure you have [Node.js](http://nodejs.org) installed
-  2. Ensure you have CoffeeScript installed globally (`npm install -g coffee-script`)
+  2. Install the package dependencies: `npm install`
   3. In a console window, start the CoffeeScript compilation: `./scripts/build.sh`
   4. In another console window, start the built-in HTTP server: `./scripts/web-server.js`
   5. Open `http://localhost:8000/index.html` in your browser

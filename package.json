@@ -1,0 +1,15 @@
+{
+  "name": "wow-gem-finder",
+  "version": "0.0.0",
+  "description": "WoW Gem Finder",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BinaryMuse/wow-gems.git"
+  },
+  "author": "Brandon Tilley <brandon@brandontilley.com>",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "coffee-script": "~1.4.0"
+  }
+}
