@@ -1,7 +1,14 @@
 class GemFilter
   constructor: (@allGems) ->
     @gems = @allGems.sort (a, b) ->
-      if a.type > b.type then 1 else -1
+      qualities = ['Poor', 'Common', 'Uncommon', 'Rare', 'Epic', 'Legendary']
+      aQualityIndex = qualities.indexOf(a.quality)
+      bQualityIndex = qualities.indexOf(b.quality)
+      qualityComp = if a.quality == b.quality then 0 else if aQualityIndex < bQualityIndex then 1 else -1
+      typeComp = if a.type == b.type then 0 else if a.type > b.type then 1 else -1
+      nameComp = if a.name == b.name then 0 else if a.name > b.name then 1 else -1
+
+      qualityComp || typeComp || nameComp
 
     @filter =
       types:
