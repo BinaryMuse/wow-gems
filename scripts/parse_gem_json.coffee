@@ -36,12 +36,15 @@ qualityMap =
 
 parseStats = (description) ->
   parts = description.split(' and ')
-  prefixRegex = /^\+(\S+) (.*)$/
+  prefixRegexPlus = /^(\+\S+) (.*)$/
+  prefixRegexPercent = /^(\S+\%) (.*)$/
   suffixRegex = /^(.*) by (\S+)$/
 
   stats = []
   for part in parts
-    if match = prefixRegex.exec(part)
+    if match = prefixRegexPlus.exec(part)
+      stats.push { stat: match[2], amount: match[1] }
+    if match = prefixRegexPercent.exec(part)
       stats.push { stat: match[2], amount: match[1] }
     else if match = suffixRegex.exec(part)
       stats.push { stat: match[1], amount: match[2] }
