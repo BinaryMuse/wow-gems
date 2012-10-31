@@ -24,8 +24,8 @@ body {
   margin-left: 280px;
 }
 
-#main.loading {
-  text-align: center;
+#main .loading {
+  margin-left: 100px;
 }
 
 label[disabled] {

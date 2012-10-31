@@ -1,5 +1,11 @@
 filters = angular.module 'gem-finder.filters', []
-filters.filter 'interpolate', ['version', (version) ->
-  (text) ->
-    String(text).replace(/\%VERSION\%/mg, version)
+
+filters.filter 'capitalize', [->
+  (str) ->
+    str.charAt(0).toUpperCase() + str.slice(1)
+]
+
+filters.filter 'value', [->
+  (str) ->
+    str.replace(/[^a-z]/ig, '').toLowerCase()
 ]

@@ -1,27 +1,27 @@
 <div ng-controller="IndexController">
 
   <div id="filter">
-    <div class='filter-section' ng-repeat="filterType in filterCategories">
-      <p><strong>{{filterType}}</strong></p>
-      <div class="checkbox-container" ng-repeat="type in filterValues[filterType.toLowerCase()]">
-        <input id="check-type-{{type.value}}"
+    <div class='filter-section' ng-repeat="category in filter.categories">
+      <p><strong>{{category | capitalize}}</strong></p>
+      <div class="checkbox-container" ng-repeat="type in filter.filterValues[category]">
+        <input id="check-type-{{type | value}}"
                type="checkbox"
-               ng-model="filter[filterType.toLowerCase()][type.name]"
-               ng-change="refilter()"
-               ng-disabled="!canFilter(filterType.toLowerCase(), type.name)">
-        <label for="check-type-{{type.value}}" ng-disabled="!canFilter(filterType.toLowerCase(), type.name)">{{type.name}}</label>
+               ng-model="filter.filter[category][type]"
+               ng-change="filter.refilter()"
+               ng-disabled="!filter.canFilter(category, type)">
+        <label for="check-type-{{type | value}}" ng-disabled="!filter.canFilter(category, type)">{{type}}</label>
       </div>
     </div>
   </div>
 
   <div id="main">
-    <div class="loading" ng-show="!loaded">
+    <div class="loading" ng-hide="loaded">
       Loading...
     </div>
 
     <div class="loaded" ng-show="loaded">
-      <div>Showing {{filteredGems.length}} of
-        <ng-pluralize count="allGems.length"
+      <div>Showing {{filter.gems.length}} of
+        <ng-pluralize count="filter.allGems.length"
                       when="{'1': '1 gem', 'other': '{} gems'}"></ng-pluralize>.
       </div>
       <table>
@@ -31,7 +31,7 @@
           <th class="col-quality">Quality</th>
           <th>Stats</td>
         </tr>
-        <tr ng-repeat="gem in filteredGems">
+        <tr ng-repeat="gem in filter.gems">
           <td class="cell-name">{{gem.name}}</td>
           <td class="cell-type {{gem.type | lowercase}}">{{gem.type}}</td>
           <td class="cell-quality {{gem.quality | lowercase}}">{{gem.quality}}</td>
