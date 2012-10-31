@@ -68,6 +68,7 @@ for file in files
       quality: qualityMap[data.quality]
       sockets: socketMap[data.gemInfo.type.type].split(',')
       stats: parseStats(data.gemInfo.bonus.name)
+      bop: data.itemBind == 1
     gems.gems.push(gem)
 
 fs.writeFileSync __dirname + "/../app/data/gems.json", JSON.stringify(gems), 'utf8'

@@ -28,6 +28,9 @@ class GemFilter
         Epic: false
         Legendary: false
       stats: {}
+      binds:
+        'Binds on Pickup': false
+        'Doesn\'t Bind on Pickup': false
       jewelcrafting:
         'Requires Jewelcrafting': false
         'Usable by Non-Jewelcrafters': false
@@ -37,6 +40,7 @@ class GemFilter
       stats: []
       sockets: []
       qualities: Object.keys(@filter.qualities)
+      binds: Object.keys(@filter.binds)
       jewelcrafting: Object.keys(@filter.jewelcrafting)
 
     types = []
@@ -73,6 +77,9 @@ class GemFilter
       newGems = (gem for gem in gems when type in gem.sockets)
     else if category == 'qualities'
       newGems = (gem for gem in gems when type == gem.quality)
+    else if category == 'binds'
+      newGems = (gem for gem in gems when gem.bop == true) if type == 'Binds on Pickup'
+      newGems = (gem for gem in gems when gem.bop == false) if type == 'Doesn\'t Bind on Pickup'
     else if category == 'jewelcrafting'
       newGems = (gem for gem in gems when gem.jcOnly == true) if type == 'Requires Jewelcrafting'
       newGems = (gem for gem in gems when gem.jcOnly == false) if type == 'Usable by Non-Jewelcrafters'
