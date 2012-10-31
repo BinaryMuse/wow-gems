@@ -5,4 +5,7 @@ window.IndexController = (scope, gems, GemFilter) ->
     scope.filter = new GemFilter(data.gems)
     scope.loaded = true
 
+  scope.gemUrl = (id) ->
+    "http://www.wowhead.com/item=#{id}"
+
 window.IndexController.$inject = ['$scope', 'gems', 'GemFilter'];

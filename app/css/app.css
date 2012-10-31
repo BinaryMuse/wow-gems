@@ -52,6 +52,12 @@ th { text-align: left; }
 .cell-type.meta { color: gray; }
 .cell-type.sha-touched { color: orange; }
 
+.gem-row.common .cell-name a { color: black; }
+.gem-row.uncommon .cell-name a { color: green; }
+.gem-row.rare .cell-name a { color: blue; }
+.gem-row.epic .cell-name a { color: purple; }
+.gem-row.legendary .cell-name a { color: orange; }
+
 .cell-quality.common { color: black; }
 .cell-quality.uncommon { color: green; }
 .cell-quality.rare { color: blue; }
