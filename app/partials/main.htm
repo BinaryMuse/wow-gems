@@ -1,6 +1,11 @@
 <div ng-controller="IndexController">
 
+  <div id="header">
+    <h1>WoW Gem Finder</h1>
+  </div>
+
   <div id="filter">
+    <div class="reset"><a ng-click="filter.reset()">Reset Filter</a></div>
     <div class='filter-section' ng-repeat="category in filter.categories">
       <p><strong>{{category | capitalize}}</strong></p>
       <div class="checkbox-container" ng-repeat="type in filter.filterValues[category]">

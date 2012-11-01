@@ -4,6 +4,7 @@ body {
 
 #header {
   height: 50px;
+  margin-left: 310px;
 }
 
 #footer {
@@ -13,15 +14,33 @@ body {
   margin-top: 10px;
   padding-top: 10px;
   clear: both;
+  margin-left: 310px;
 }
 
 #filter {
-  float: left;
+  /* float: left; */
+  /* width: 275px; */
+  /* overflow: scroll; */
+  /* max-height: 100%; */
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 275px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0 0 10px 20px;
+}
+
+#filter .reset {
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
 
 #main {
-  margin-left: 280px;
+  margin-left: 310px;
 }
 
 #main .loading {

@@ -94,6 +94,12 @@ class GemFilter
         newGems = @applyScope(newGems, category, type) if value == true
     @gems = newGems
 
+  reset: =>
+    for category, obj of @filter
+      for type, value of obj
+        @filter[category][type] = false if value == true
+    @refilter()
+
   canFilter: (category, type) =>
     newGems = @applyScope(@gems, category, type)
     newGems.length != 0
