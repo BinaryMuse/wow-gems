@@ -5,16 +5,16 @@
   </div>
 
   <div id="filter">
-    <div class="reset"><a ng-click="filter.reset()">Reset Filter</a></div>
+    <div class="reset"><a ng-click="reset()">Reset Filter</a></div>
     <div class='filter-section' ng-repeat="category in filter.categories">
       <p><strong>{{category | capitalize}}</strong></p>
       <div class="checkbox-container" ng-repeat="type in filter.filterValues[category]">
         <input id="check-type-{{category | value}}-{{type | value}}"
                type="checkbox"
                ng-model="filter.filter[category][type]"
-               ng-change="filter.refilter()"
-               ng-disabled="!filter.canFilter(category, type)">
-        <label for="check-type-{{category | value}}-{{type | value}}" ng-disabled="!filter.canFilter(category, type)">{{type}}</label>
+               ng-change="refilter()"
+               ng-disabled="!canFilter(category, type)">
+        <label for="check-type-{{category | value}}-{{type | value}}" ng-disabled="!canFilter(category, type)">{{type}}</label>
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 class GemFilter
-  constructor: (@allGems) ->
+  constructor: (@allGems, initialFilter = {}) ->
     @gems = @allGems.sort (a, b) ->
       qualities = ['Poor', 'Common', 'Uncommon', 'Rare', 'Epic', 'Legendary']
       aQualityIndex = qualities.indexOf(a.quality)
@@ -61,6 +61,13 @@ class GemFilter
     @filterValues.sockets = (socket for socket in sockets)
 
     @categories = Object.keys(@filter)
+
+    for outer, obj of initialFilter
+      for inner, value of obj
+        console.log outer, inner, value
+        @filter[outer][inner] = true if value
+
+    @refilter()
 
   # Returns an array of gems that are both in `gems` and that should
   # continue to be shown if the filter is modified so that
