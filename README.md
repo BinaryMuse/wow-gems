@@ -1,6 +1,8 @@
 WoW Gem Finder
 ==============
 
+This is a web-based tool to find gems in World of Warcraft that match certain criteria. The gem data is provided by the [Community Platform API](http://blizzard.github.com/api-wow-docs/).
+
 Running
 -------
 
