@@ -6,6 +6,8 @@ This is a web-based tool to find gems in World of Warcraft that match certain cr
 Running
 -------
 
+(These instructions are for UNIX-like operating systems.)
+
   1. Ensure you have [Node.js](http://nodejs.org) installed
   2. Install the package dependencies: `npm install`
   3. In a console window, start the CoffeeScript compilation: `./scripts/build.sh`
