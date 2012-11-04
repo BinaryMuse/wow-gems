@@ -43,13 +43,9 @@ class GemFilter
       binds: Object.keys(@filter.binds)
       jewelcrafting: Object.keys(@filter.jewelcrafting)
 
-    types = []
     stats = []
     sockets = []
-    qualities = []
     for gem in @gems
-      types.push(gem.type) unless gem.type in types
-      qualities.push(gem.quality) unless gem.quality in qualities
       for stat in gem.stats
         stats.push stat.stat unless stat.stat in stats
       for socket in gem.sockets
