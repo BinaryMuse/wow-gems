@@ -60,7 +60,7 @@ class GemFilter
 
     for outer, obj of initialFilter
       for inner, value of obj
-        @filter[outer][inner] = true if value
+        @filter[outer][inner] = true if value && @filter[outer]? && @filter[outer][inner]?
 
     @refilter()
 
