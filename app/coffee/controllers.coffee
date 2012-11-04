@@ -5,7 +5,7 @@ window.IndexController = (scope, gems, GemFilter) ->
     localStorage?.setItem('savedFilter', JSON.stringify(filter))
 
   loadFilter = ->
-    JSON.parse(localStorage?.getItem('savedFilter')) ? {}
+    JSON.parse(localStorage?.getItem('savedFilter') ? '{}')
 
   gems.get().success (data, status, headers, config) ->
     storedFilter = loadFilter()
