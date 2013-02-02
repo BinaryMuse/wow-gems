@@ -36,7 +36,7 @@
           <th class="col-quality">Quality</th>
           <th>Stats</td>
         </tr>
-        <tr ng-repeat="gem in filter.gems" class="gem-row {{gem.quality | lowercase}}">
+        <tr ng-repeat="gem in filter.allGems" class="gem-row {{gem.quality | lowercase}}" ng-show="filter.gems.indexOf(gem) != -1">
           <td class="cell-name"><a ng-href="{{gemUrl(gem.id)}}">{{gem.name}}</a></td>
           <td class="cell-type {{gem.type | lowercase}}">{{gem.type}}</td>
           <td class="cell-quality {{gem.quality | lowercase}}">{{gem.quality}}</td>
