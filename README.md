@@ -13,7 +13,7 @@ Running
   3. Start development mode by running: `./scripts/development.sh`
   4. Open `http://localhost:8000/index.html` in your browser
 
-`scripts/compile.sh` watches the CoffeeScript files in `app/coffee` and compiles them to JavaScript in `app/js`; `app/index.html` includes these compiled JavaScript files to run the application. If you change a `.coffee` file in `app/coffee`, be sure development mode is running so it will recompile the CoffeeScript.
+`scripts/development.sh` runs, in addition to the built-in web server, `scripts/compile.sh`, which watches the CoffeeScript files in `app/coffee` and compiles them to JavaScript in `app/js`; `app/index.html` includes these compiled JavaScript files to run the application. If you change a `.coffee` file in `app/coffee`, be sure development mode or `compile.sh` is running so it will recompile the CoffeeScript.
 
 Editing
 -------
